@@ -1,34 +1,127 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Patrick Maina | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patrick Maina Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
-body {
-  font-family: Arial;
-  margin: 0;
-  background: #0f172a;
-  color: white;
-  text-align: center;
+
+html{
+scroll-behavior:smooth;
 }
-nav {
-  background: #1e293b;
-  padding: 15px;
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#0b1120;
+color:white;
 }
-nav a {
-  color: white;
-  margin: 15px;
-  text-decoration: none;
+
+/* NAVBAR */
+nav{
+position:fixed;
+width:100%;
+top:0;
+background:rgba(15,23,42,0.9);
+padding:15px;
+text-align:center;
+z-index:1000;
 }
-section {
-  padding: 60px 20px;
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:500;
 }
-.btn {
-  background: #3b82f6;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  color: white;
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+animation:fadeIn 2s ease;
 }
+
+.hero h1{
+font-size:50px;
+margin:0;
+}
+
+.hero p{
+opacity:0.8;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* SECTIONS */
+section{
+padding:100px 20px;
+max-width:1000px;
+margin:auto;
+text-align:center;
+}
+
+/* CARDS */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:#111827;
+padding:25px;
+border-radius:12px;
+transition:0.3s;
+box-shadow:0 0 15px rgba(0,0,0,0.4);
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+/* BLOG */
+.blog{
+background:#020617;
+padding:25px;
+border-radius:10px;
+margin-top:20px;
+}
+
+/* BUTTON */
+.btn{
+background:#2563eb;
+padding:12px 20px;
+border-radius:6px;
+color:white;
+text-decoration:none;
+display:inline-block;
+margin-top:15px;
+}
+
+footer{
+text-align:center;
+padding:40px;
+opacity:0.6;
+}
+
 </style>
 </head>
 
@@ -38,31 +131,76 @@ section {
 <a href="#home">Home</a>
 <a href="#about">About</a>
 <a href="#projects">Projects</a>
+<a href="#blogs">Blogs</a>
 <a href="#contact">Contact</a>
 </nav>
 
-<section id="home">
-<h1>Hi, I'm Patrick Maina</h1>
-<p>Data Analyst | Finance | Tech Enthusiast</p>
-<a class="btn" href="#contact">Hire Me</a>
+<!-- HERO -->
+<section id="home" class="hero">
+<h1>Patrick Maina</h1>
+<p>Data Analyst • Finance • Technology</p>
+<a href="#projects" class="btn">View My Work</a>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
 <h2>About Me</h2>
-<p>I specialize in data analysis, financial modeling and business insights.</p>
+<p>
+I analyze data, build financial insights and develop solutions that help businesses make better decisions.
+</p>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
 <h2>Projects</h2>
-<p>Fraud Detection Model</p>
-<p>IFRS Research Project</p>
-<p>Financial Dashboard</p>
+
+<div class="cards">
+
+<div class="card">
+<h3>Fraud Detection System</h3>
+<p>Insurance fraud prediction using data analytics.</p>
+</div>
+
+<div class="card">
+<h3>IFRS Research Project</h3>
+<p>Impact of IFRS adoption on reporting quality.</p>
+</div>
+
+<div class="card">
+<h3>Financial Dashboard</h3>
+<p>Interactive analytics dashboard for business reporting.</p>
+</div>
+
+</div>
+
 </section>
 
+<!-- BLOG SECTION -->
+<section id="blogs">
+<h2>Blogs</h2>
+
+<div class="blog">
+<h3>My Data Analytics Journey</h3>
+<p>How I started working with data and financial analysis.</p>
+</div>
+
+<div class="blog">
+<h3>Understanding Financial Reporting</h3>
+<p>Simple explanation of IFRS and reporting quality.</p>
+</div>
+
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
 <h2>Contact</h2>
-<p>Email: your@email.com</p>
+<p>Email: youremail@email.com</p>
+<a class="btn">Hire Me</a>
 </section>
+
+<footer>
+© 2026 Patrick Maina Portfolio
+</footer>
 
 </body>
 </html>
