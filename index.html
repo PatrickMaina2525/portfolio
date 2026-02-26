@@ -13,6 +13,27 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 <style>
 
+/* ================= LOADER ================= */
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:#050810;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+font-size:28px;
+color:#6c5ce7;
+animation:fadeOut 1s forwards;
+animation-delay:2s;
+}
+
+@keyframes fadeOut{
+to{opacity:0;visibility:hidden;}
+}
+
+/* ================= GLOBAL ================= */
 *{
 margin:0;
 padding:0;
@@ -27,15 +48,15 @@ color:white;
 overflow-x:hidden;
 }
 
-/* PARTICLE BACKGROUND */
+/* BACKGROUND LIGHT */
 body::before{
 content:"";
 position:fixed;
 width:100%;
 height:100%;
 background:
-radial-gradient(circle at 20% 20%,#6c5ce733 0%,transparent 40%),
-radial-gradient(circle at 80% 60%,#00cec933 0%,transparent 40%);
+radial-gradient(circle at 10% 20%,#6c5ce733,transparent 40%),
+radial-gradient(circle at 80% 70%,#00cec933,transparent 40%);
 z-index:-1;
 }
 
@@ -45,10 +66,9 @@ position:fixed;
 width:100%;
 display:flex;
 justify-content:space-between;
-align-items:center;
 padding:20px 8%;
 background:rgba(10,15,25,.6);
-backdrop-filter:blur(10px);
+backdrop-filter:blur(12px);
 z-index:1000;
 }
 
@@ -56,19 +76,12 @@ z-index:1000;
 display:flex;
 align-items:center;
 gap:10px;
-font-size:22px;
 font-weight:600;
+font-size:22px;
 color:#6c5ce7;
 }
 
-.logo img{
-height:38px;
-transition:.4s;
-}
-
-.logo img:hover{
-transform:rotate(10deg) scale(1.1);
-}
+.logo img{height:38px;}
 
 nav ul{
 display:flex;
@@ -77,14 +90,12 @@ list-style:none;
 }
 
 nav a{
-color:white;
 text-decoration:none;
+color:white;
 transition:.3s;
 }
 
-nav a:hover{
-color:#6c5ce7;
-}
+nav a:hover{color:#6c5ce7;}
 
 /* HERO */
 .hero{
@@ -95,16 +106,12 @@ align-items:center;
 padding:0 8%;
 }
 
-.hero h1{
-font-size:52px;
-}
-
 .typing{
 color:#6c5ce7;
 border-right:3px solid;
 white-space:nowrap;
 overflow:hidden;
-animation:typing 4s steps(22),blink .7s infinite;
+animation:typing 4s steps(20),blink .7s infinite;
 }
 
 @keyframes typing{
@@ -113,27 +120,43 @@ to{width:100%}
 }
 
 @keyframes blink{
-50%{border-color:transparent}
+50%{border-color:transparent;}
 }
 
 .hero img{
 width:360px;
 border-radius:50%;
 box-shadow:0 0 60px #6c5ce7;
-animation:float 5s ease-in-out infinite;
+animation:float 5s infinite ease-in-out;
 }
 
 @keyframes float{
 50%{transform:translateY(-20px);}
 }
 
+/* BUTTON */
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:#6c5ce7;
+border-radius:30px;
+text-decoration:none;
+color:white;
+transition:.3s;
+}
+
+.btn:hover{
+box-shadow:0 0 20px #6c5ce7;
+}
+
 /* SOCIALS */
 .socials a{
 display:inline-flex;
-justify-content:center;
-align-items:center;
 width:45px;
 height:45px;
+justify-content:center;
+align-items:center;
 margin:10px;
 border-radius:50%;
 background:rgba(255,255,255,.05);
@@ -144,7 +167,6 @@ transition:.4s;
 .socials a:hover{
 background:#6c5ce7;
 transform:translateY(-6px);
-box-shadow:0 0 20px #6c5ce7;
 }
 
 /* SECTIONS */
@@ -154,8 +176,8 @@ padding:120px 8%;
 
 .title{
 text-align:center;
-font-size:34px;
 margin-bottom:60px;
+font-size:34px;
 }
 
 /* GLASS CARDS */
@@ -170,9 +192,9 @@ background:rgba(255,255,255,.05);
 backdrop-filter:blur(15px);
 padding:30px;
 border-radius:15px;
-transition:.4s;
 opacity:0;
 transform:translateY(40px);
+transition:.6s;
 }
 
 .card.show{
@@ -180,16 +202,21 @@ opacity:1;
 transform:translateY(0);
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px #6c5ce7;
+/* SKILLS */
+.skill{
+margin:15px 0;
 }
 
-/* BLOG */
-.blog-card img{
-width:100%;
-border-radius:10px;
-margin-bottom:15px;
+.bar{
+background:#111;
+border-radius:20px;
+overflow:hidden;
+}
+
+.bar span{
+display:block;
+height:8px;
+background:#6c5ce7;
 }
 
 /* FOOTER */
@@ -204,6 +231,8 @@ background:#050810;
 
 <body>
 
+<div id="loader">MainaCode Loading...</div>
+
 <nav>
 <div class="logo">
 <img src="logo.svg"> MainaCode
@@ -212,8 +241,8 @@ background:#050810;
 <ul>
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#blog">Projects</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -226,13 +255,14 @@ background:#050810;
 
 <p>Junior Accountant • Finance Analyst • Data Enthusiast</p>
 
+<a href="Patrick_CV.pdf" class="btn">Download CV</a>
+
 <div class="socials">
+<a href="#"><i class="fab fa-linkedin"></i></a>
 <a href="#"><i class="fab fa-instagram"></i></a>
 <a href="#"><i class="fab fa-facebook"></i></a>
-<a href="#"><i class="fab fa-linkedin"></i></a>
 <a href="#"><i class="fab fa-snapchat"></i></a>
 </div>
-
 </div>
 
 <img src="profile.jpg">
@@ -243,79 +273,61 @@ background:#050810;
 <h2 class="title">About Me</h2>
 
 <div class="grid">
-
-<div class="card">
-<h3>Education</h3>
-<p>B.Com Accounting — KCA University</p>
-</div>
-
-<div class="card">
-<h3>Skills</h3>
-<p>Accounting • Excel • Financial Analysis</p>
-</div>
-
-<div class="card">
-<h3>Experience</h3>
-<p>Junior Accountant — Qhala Ltd</p>
-</div>
-
+<div class="card">B.Com Accounting — KCA University</div>
+<div class="card">Junior Accountant — Qhala Limited</div>
+<div class="card">IBM SkillsBuild AI & Data Fundamentals</div>
 </div>
 </section>
 
-<section id="services">
-<h2 class="title">Services</h2>
+<section id="skills">
+<h2 class="title">Skills</h2>
 
-<div class="grid">
-
-<div class="card">Accounting Services</div>
-<div class="card">Financial Analysis</div>
-<div class="card">Data Analysis</div>
-
+<div class="skill">
+Accounting
+<div class="bar"><span style="width:90%"></span></div>
 </div>
+
+<div class="skill">
+Financial Analysis
+<div class="bar"><span style="width:85%"></span></div>
+</div>
+
+<div class="skill">
+Excel & Data Analysis
+<div class="bar"><span style="width:80%"></span></div>
+</div>
+
 </section>
 
-<section id="blog">
+<section id="projects">
 <h2 class="title">Projects</h2>
 
 <div class="grid">
-
-<div class="card blog-card">
-<img src="https://picsum.photos/400/200">
-Fraud Detection Project
-</div>
-
-<div class="card blog-card">
-<img src="https://picsum.photos/401/200">
-IFRS Research Project
-</div>
-
+<div class="card">Insurance Fraud Detection</div>
+<div class="card">IFRS Research Project</div>
 </div>
 </section>
 
 <section id="contact">
 <h2 class="title">Contact</h2>
-<p>Email: patrickmaina@email.com</p>
 <p>Phone: 0793965036</p>
+<p>Email: patrickmaina@email.com</p>
 </section>
 
 <footer>
-
 <h2>MainaCode</h2>
 
 <div class="socials">
+<a href="#"><i class="fab fa-linkedin"></i></a>
 <a href="#"><i class="fab fa-instagram"></i></a>
 <a href="#"><i class="fab fa-facebook"></i></a>
-<a href="#"><i class="fab fa-linkedin"></i></a>
 <a href="#"><i class="fab fa-snapchat"></i></a>
 </div>
 
 <p>© 2026 Patrick Maina</p>
-
 </footer>
 
 <script>
-
-/* SCROLL ANIMATION */
 const cards=document.querySelectorAll('.card');
 
 window.addEventListener('scroll',()=>{
@@ -326,7 +338,6 @@ card.classList.add('show');
 }
 });
 });
-
 </script>
 
 </body>
