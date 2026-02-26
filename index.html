@@ -1,295 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>MainaCode | Patrick Maina</title>
-
-<link rel="icon" href="logo.png">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-scroll-behavior:smooth;
-}
-
-body{
-background:#070b14;
-color:white;
-}
-
-/* NAVBAR */
-nav{
-position:fixed;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 8%;
-background:rgba(10,15,25,.8);
-backdrop-filter:blur(12px);
-z-index:1000;
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:12px;
-font-size:22px;
-font-weight:600;
-color:#6c5ce7;
-}
-
-.logo img{
-height:40px;
-}
-
-/* HERO */
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:120px 8%;
-}
-
-.hero-text{
-max-width:600px;
-}
-
-.hero h1{
-font-size:52px;
-}
-
-.hero span{
-color:#6c5ce7;
-}
-
-.hero p{
-margin-top:15px;
-line-height:1.7;
-color:#ccc;
-}
-
-.hero img{
-width:350px;
-border-radius:20px;
-box-shadow:0 0 40px #6c5ce7;
-}
-
-/* BUTTON */
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:12px 28px;
-background:#6c5ce7;
-border-radius:30px;
-text-decoration:none;
-color:white;
-}
-
-/* SECTION */
-section{
-padding:100px 8%;
-}
-
-.title{
-font-size:34px;
-margin-bottom:40px;
-text-align:center;
-}
-
-/* CARDS */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-}
-
-.card{
-background:#111827;
-padding:30px;
-border-radius:15px;
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px #6c5ce7;
-}
-
-/* TIMELINE */
-.timeline{
-border-left:3px solid #6c5ce7;
-padding-left:20px;
-}
-
-.timeline div{
-margin-bottom:25px;
-}
-
-/* SOCIAL */
-.socials a{
-margin:10px;
-font-size:22px;
-color:white;
-transition:.3s;
-}
-
-.socials a:hover{
-color:#6c5ce7;
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:40px;
-background:#050810;
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Gallery styles */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .gallery img {
+            max-width: 300px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
-
 <body>
-
-<nav>
-<div class="logo">
-<img src="logo.png">
-MainaCode
-</div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-
-<div class="hero-text">
-
-<h1>Hi, I'm <span>Patrick Maina</span></h1>
-
-<p>
-Junior Accountant and Finance enthusiast passionate about financial analysis,
-data-driven decision making and modern accounting systems.
-Currently pursuing Bachelor of Commerce (Accounting) at KCA University.
-</p>
-
-<a href="Patrick_CV.pdf" class="btn">Download CV</a>
-
-<div class="socials">
-<a href="#"><i class="fab fa-linkedin"></i></a>
-<a href="#"><i class="fab fa-instagram"></i></a>
-<a href="#"><i class="fab fa-facebook"></i></a>
-</div>
-
-</div>
-
-<img src="profile.jpg">
-
-</section>
-
-<!-- ABOUT -->
-<section>
-
-<h2 class="title">About Me</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Education</h3>
-<p>KCA University — Bachelor of Commerce (Accounting)</p>
-<p>Pumwani High School — KCSE C+</p>
-</div>
-
-<div class="card">
-<h3>Core Skills</h3>
-<p>Financial Accounting</p>
-<p>Investment Analysis</p>
-<p>Risk Management</p>
-<p>Microsoft Excel & Office</p>
-</div>
-
-<div class="card">
-<h3>Professional Traits</h3>
-<p>Analytical Thinker</p>
-<p>Detail Oriented</p>
-<p>Team Collaboration</p>
-<p>Fast Learner</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- EXPERIENCE -->
-<section>
-
-<h2 class="title">Work Experience</h2>
-
-<div class="timeline">
-
-<div>
-<h3>Qhala Limited — Junior Accountant (2026–Present)</h3>
-<p>Managing financial postings, reconciliations and monitoring company profitability.</p>
-</div>
-
-<div>
-<h3>Co-operative Bank — Internship</h3>
-<p>Handled daily accounts postings and employee reimbursement processing.</p>
-</div>
-
-<div>
-<h3>IEBC — Polling Clerk</h3>
-<p>Supported electoral operations during the 2022 General Election.</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- PROJECTS -->
-<section>
-
-<h2 class="title">Projects</h2>
-
-<div class="grid">
-
-<div class="card">
-<img src="https://picsum.photos/400/200" width="100%">
-<h3>Insurance Fraud Detection</h3>
-<p>Data analytics project predicting fraudulent claims.</p>
-</div>
-
-<div class="card">
-<img src="https://picsum.photos/401/200" width="100%">
-<h3>IFRS Research Study</h3>
-<p>Impact of IFRS adoption on financial reporting quality.</p>
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-<img src="logo.png" height="40"><br><br>
-
-<div class="socials">
-<a href="#"><i class="fab fa-linkedin"></i></a>
-<a href="#"><i class="fab fa-instagram"></i></a>
-<a href="#"><i class="fab fa-facebook"></i></a>
-</div>
-
-<p>© 2026 MainaCode | Patrick Maina</p>
-
-</footer>
-
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+    </header>
+    <main>
+        <section>
+            <h2>About Me</h2>
+            <p>Passionate web developer with a focus on creating dynamic and responsive web applications.</p>
+        </section>
+        <section>
+            <h2>Projects</h2>
+            <p>Check out my work below:</p>
+            <ul>
+                <li>Project 1</li>
+                <li>Project 2</li>
+                <li>Project 3</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <img src="image1.jpg" alt="Image 1">
+                <img src="image2.jpg" alt="Image 2">
+                <img src="image3.jpg" alt="Image 3">
+                <img src="image4.jpg" alt="Image 4">
+                <img src="image5.jpg" alt="Image 5">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Patrick Maina</p>
+    </footer>
 </body>
 </html>
